@@ -1,37 +1,65 @@
+import { ModeToggle } from "@/components/mode";
 import Image from "next/image";
+import logolight from "../public/logolight.svg";
+import logodark from "../public/logodark.svg";
+import { cn } from "@/utils/cn";
+import { Spotlight } from "@/components/ui/Spotlight";
+import { TypewriterEffect } from "@/components/ui/typewriter-effect";
+import { HoverBorderGradient } from "@/components/ui/hover-border-gradient";
+import { Button } from "@/components/ui/button";
 
 export default function Home() {
+  const words = [
+    {
+      text: "Making ",
+    },
+    {
+      text: "Billing ",
+    },
+    {
+      text: "Easy ",
+    },
+    {
+      text: "For",
+    },
+    {
+      text: "You",
+    },
+    {
+      text: "Free.",
+    },
+  ];
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Follow On X 
-       
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className=" font-bold text-4xl flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://twitter.com/Arihantdotcom"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-         
-            Arihant Jain 🔥
-          
-          </a>
+    <div className="h-[50rem] w-full dark:bg-black bg-white  dark:bg-grid-white/[0.1] bg-grid-black/[0.2] relative  ">
+      <div className=" flex flex-row items-center justify-between">
+        <div className="flex items-center">
+          <Image
+            src={logodark}
+            height={55}
+            width={35}
+            className="m-5 dark:"
+            alt=""
+          />
+          <h1 className="font-bold text-2xl">EzBilling</h1>
+        </div>
+        <div className="flex gap-8 p-4">
+          <h1>Pricing</h1>
+          <h1>Register</h1>
+        <ModeToggle />
         </div>
       </div>
 
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-full sm:before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full sm:after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-      <h1 className="text-5xl font-bold">
-        EzBilling Coming Soon
-      </h1>
+      <div>
+        <Spotlight
+          className="-top-40 left-0 md:left-60 md:-top-20"
+          fill="white"
+        />
       </div>
 
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-      
+        <TypewriterEffect words={words} className="mt-16"/>
+      <div className="mt-12 flex justify-center  text-center">
+      <Button variant={"destructive"}>Coming Soon</Button>
       </div>
-    </main>
+    </div>
   );
 }
