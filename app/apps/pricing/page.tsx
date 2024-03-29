@@ -74,7 +74,7 @@ const stander = [
   { title: "Make Your Custom Plan" },
 ];
 
-const Pricing: React.FC<PricingProps> = ({ className }) => {
+const Pricing: React.FC<PricingProps> = ({ className, ...props }) => {
   return (
     <>
       <div className="h-[50rem] w-full dark:bg-black bg-white  dark:bg-grid-white/[0.1] bg-grid-black/[0.2] relative  ">
