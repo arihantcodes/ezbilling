@@ -28,20 +28,20 @@ const basic = [
     title: "Share Invoices via Email in 1-click",
   },
   {
-    title: "24x7 Email  Support"
+    title: "24x7 Email  Support",
   },
   {
-    title:"One Click Print"
+    title: "One Click Print",
   },
   {
-    title:"Invoice Tracking"
+    title: "Invoice Tracking",
   },
   {
-    title:"Expense Tracking"
+    title: "Expense Tracking",
   },
   {
-    title:"Tax Calculation and Management"
-  }
+    title: "Tax Calculation and Management",
+  },
 ];
 const stander = [
   {
@@ -54,26 +54,25 @@ const stander = [
     title: "Share Invoices via Email in 1-click",
   },
   {
-    title: "24x7 Email  Support"
+    title: "24x7 Email  Support",
   },
   {
-    title:"One Click Print"
+    title: "One Click Print",
   },
   {
-    title:"Invoice Tracking"
+    title: "Invoice Tracking",
   },
   {
-    title:"Expense Tracking"
+    title: "Expense Tracking",
   },
-  {title:"Payment Gateway Integration"},
-  {title:"Document Attachment Capability"},
-  {title:"Priority Support"},
-  {title:"Make Your Custom Plan"},
+  { title: "Payment Gateway Integration" },
+  { title: "Document Attachment Capability" },
+  { title: "Priority Support" },
+  { title: "Make Your Custom Plan" },
 ];
 
-type CardProps = React.ComponentProps<typeof Card>;
-const pricing = 
-({ className, ...props }: CardProps) => {
+type PricingProps = React.ComponentProps<typeof Card>;
+const Pricing: React.FC<PricingProps> = ({ className, ...props }) => {
   return (
     <>
       <div className="h-[50rem] w-full dark:bg-black bg-white  dark:bg-grid-white/[0.1] bg-grid-black/[0.2] relative  ">
@@ -104,7 +103,7 @@ const pricing =
             <Link href="/pricing">
               <h1 className="font-semibold text-lg">Pricing</h1>
             </Link>
-          <UserButton/>
+            <UserButton />
 
             <ModeToggle />
           </div>
@@ -116,66 +115,65 @@ const pricing =
             fill="white"
           />
         </div>
-     <div className="flex gap-12 justify-center items-center mt-16">
-     <Card className={cn("w-[380px]", className)} {...props}>
-          <CardHeader>
-            <CardTitle>Basic Plan</CardTitle>
-            <CardDescription className="text-4xl">₹ 00/mo</CardDescription>
-          </CardHeader>
-          <CardContent className="grid gap-4">
-            <div>
-              {basic.map((notification, index) => (
-                <div
-                  key={index}
-                  className="mb-4 grid grid-cols-[25px_1fr] items-start pb-4 last:mb-0 last:pb-0"
-                >
-                  <span className="flex h-2 w-2 translate-y-1 rounded-full bg-sky-500" />
-                  <div className="space-y-1">
-                    <p className="text-sm font-medium leading-none">
-                      {notification.title}
-                    </p>
+        <div className="flex gap-12 justify-center items-center mt-16">
+          <Card className={cn("w-[380px]", className)} {...props}>
+            <CardHeader>
+              <CardTitle>Basic Plan</CardTitle>
+              <CardDescription className="text-4xl">₹ 00/mo</CardDescription>
+            </CardHeader>
+            <CardContent className="grid gap-4">
+              <div>
+                {basic.map((notification, index) => (
+                  <div
+                    key={index}
+                    className="mb-4 grid grid-cols-[25px_1fr] items-start pb-4 last:mb-0 last:pb-0"
+                  >
+                    <span className="flex h-2 w-2 translate-y-1 rounded-full bg-sky-500" />
+                    <div className="space-y-1">
+                      <p className="text-sm font-medium leading-none">
+                        {notification.title}
+                      </p>
+                    </div>
                   </div>
-                </div>
-              ))}
-            </div>
-          </CardContent>
+                ))}
+              </div>
+            </CardContent>
             <Link href="/apps">
-          <CardFooter>
-            <Button className="w-full">Continue Free 😊</Button>
-          </CardFooter>
+              <CardFooter>
+                <Button className="w-full">Continue Free 😊</Button>
+              </CardFooter>
             </Link>
-        </Card>
-        <Card className={cn("w-[380px]", className)} {...props}>
-          <CardHeader>
-            <CardTitle>Standard Plan</CardTitle>
-            <CardDescription className="text-4xl">₹ 399/mo</CardDescription>
-          </CardHeader>
-          <CardContent className="grid gap-4">
-            <div>
-              {stander.map((notification, index) => (
-                <div
-                  key={index}
-                  className="mb-4 grid grid-cols-[25px_1fr] items-start pb-4 last:mb-0 last:pb-0"
-                >
-                  <span className="flex h-2 w-2 translate-y-1 rounded-full bg-sky-500" />
-                  <div className="space-y-1">
-                    <p className="text-sm font-medium leading-none">
-                      {notification.title}
-                    </p>
+          </Card>
+          <Card className={cn("w-[380px]", className)} {...props}>
+            <CardHeader>
+              <CardTitle>Standard Plan</CardTitle>
+              <CardDescription className="text-4xl">₹ 399/mo</CardDescription>
+            </CardHeader>
+            <CardContent className="grid gap-4">
+              <div>
+                {stander.map((notification, index) => (
+                  <div
+                    key={index}
+                    className="mb-4 grid grid-cols-[25px_1fr] items-start pb-4 last:mb-0 last:pb-0"
+                  >
+                    <span className="flex h-2 w-2 translate-y-1 rounded-full bg-sky-500" />
+                    <div className="space-y-1">
+                      <p className="text-sm font-medium leading-none">
+                        {notification.title}
+                      </p>
+                    </div>
                   </div>
-                </div>
-              ))}
-            </div>
-          </CardContent>
-          <CardFooter>
-            <Button className="w-full">Continue With Standard Plan 💵</Button>
-          </CardFooter>
-        </Card>
-     </div>
+                ))}
+              </div>
+            </CardContent>
+            <CardFooter>
+              <Button className="w-full">Continue With Standard Plan 💵</Button>
+            </CardFooter>
+          </Card>
+        </div>
       </div>
     </>
   );
-}
+};
 
-
-export default pricing;
+export default Pricing;
