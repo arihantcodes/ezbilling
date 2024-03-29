@@ -168,7 +168,7 @@ export default function CardDemo({ className, ...props }: CardProps) {
             </div>
           </CardContent>
           <CardFooter>
-            <Button className="w-full">Continue With Standard Plan</Button>
+            <Button className="w-full">Continue With Standard Plan 💵</Button>
           </CardFooter>
         </Card>
      </div>
