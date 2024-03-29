@@ -16,9 +16,11 @@ import {
 import Link from "next/link";
 import { Spotlight } from "@/components/ui/Spotlight";
 import { UserButton } from "@clerk/nextjs";
+
 interface PricingProps {
   className?: string;
 }
+type PricingPropsWithoutClassName = Omit<PricingProps, 'className'>;
 
 const basic = [
   {
@@ -74,7 +76,7 @@ const stander = [
   { title: "Make Your Custom Plan" },
 ];
 
-const Pricing: React.FC<PricingProps> = ({ className, ...props }) => {
+const Pricing: React.FC<PricingPropsWithoutClassName> = ({ ...props }) => {
   return (
     <>
       <div className="h-[50rem] w-full dark:bg-black bg-white  dark:bg-grid-white/[0.1] bg-grid-black/[0.2] relative  ">
@@ -118,7 +120,7 @@ const Pricing: React.FC<PricingProps> = ({ className, ...props }) => {
           />
         </div>
         <div className="flex gap-12 justify-center items-center mt-16">
-          <Card className={cn("w-[380px]", className)} >
+          <Card className={cn("w-[380px]", )} >
             <CardHeader>
               <CardTitle>Basic Plan</CardTitle>
               <CardDescription className="text-4xl">₹ 00/mo</CardDescription>
@@ -146,7 +148,7 @@ const Pricing: React.FC<PricingProps> = ({ className, ...props }) => {
               </CardFooter>
             </Link>
           </Card>
-          <Card className={cn("w-[380px]", className)} >
+          <Card className={cn("w-[380px]", )} >
             <CardHeader>
               <CardTitle>Standard Plan</CardTitle>
               <CardDescription className="text-4xl">₹ 399/mo</CardDescription>
