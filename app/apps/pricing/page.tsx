@@ -72,8 +72,8 @@ const stander = [
 ];
 
 type CardProps = React.ComponentProps<typeof Card>;
-
-export default function CardDemo({ className, ...props }: CardProps) {
+const pricing = 
+({ className, ...props }: CardProps) => {
   return (
     <>
       <div className="h-[50rem] w-full dark:bg-black bg-white  dark:bg-grid-white/[0.1] bg-grid-black/[0.2] relative  ">
@@ -176,3 +176,6 @@ export default function CardDemo({ className, ...props }: CardProps) {
     </>
   );
 }
+
+
+export default pricing;
