@@ -1,16 +1,14 @@
-"use server"
+"use server";
 
-import  User  from "@/lib/models/user.model"
+import User from "@/lib/models/user.model";
+import { connect } from "@/lib/db";
 
-import ConnectDB from "@/lib/db"
-
-export async function createuser(user:any){
-    try {
-        await ConnectDB()
-        const newUser = await User.create(user)
-   
-        return JSON.parse(JSON.stringify(newUser))
-    } catch (error) {
-        console.log("Error: ", error);
-    }
+export async function createUser(user: any) {
+  try {
+    await connect();
+    const newUser = await User.create(user);
+    return JSON.parse(JSON.stringify(newUser));
+  } catch (error) {
+    console.log(error);
+  }
 }
