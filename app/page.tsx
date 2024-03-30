@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { ModeToggle } from "@/components/mode";
 import Image from "next/image";
 import logolight from "../public/logolight.svg";
@@ -11,7 +11,6 @@ import { HoverBorderGradient } from "@/components/ui/hover-border-gradient";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { Rating } from "@/components/rating";
-
 
 export default function Home() {
   const words = [
@@ -53,20 +52,22 @@ export default function Home() {
             alt=""
           />
 
-          <h1 className="md:font-bold md:text-2xl hidden md:block ">EzBilling</h1>
+          <h1 className="md:font-bold md:text-2xl hidden md:block ">
+            EzBilling
+          </h1>
         </div>
         <div className="flex items-center gap-8 p-4">
-          <Link href="/apps/pricing">
-          
-          <h1 className="font-semibold text-lg">Pricing</h1>
+          <Link href="/pricing">
+            <h1 className="font-semibold text-lg">Pricing</h1>
           </Link>
-          <Link href="/apps">
-          <h1 className="font-semibold text-lg">Register</h1>
-          
-         
+          <Link href="/login">
+            <h1 className="font-semibold text-lg">Login</h1>
           </Link>
-       
-        <ModeToggle />
+          <Link href="/signup">
+            <h1 className="font-semibold text-lg">Signup</h1>
+          </Link>
+
+          <ModeToggle />
         </div>
       </div>
 
@@ -77,11 +78,11 @@ export default function Home() {
         />
       </div>
 
-        <TypewriterEffect words={words} className="mt-16"/>
+      <TypewriterEffect words={words} className="mt-16" />
       <div className="mt-12 flex justify-center flex-col  text-center">
-        <Rating/>
+        <Rating />
         <Link href="/apps">
-        <Button>Create Your First Bill</Button>
+          <Button>Create Your First Bill</Button>
         </Link>
       </div>
     </div>

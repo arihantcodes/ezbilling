@@ -15,7 +15,7 @@ import {
 } from "@/components/ui/card";
 import Link from "next/link";
 import { Spotlight } from "@/components/ui/Spotlight";
-import { UserButton } from "@clerk/nextjs";
+
 
 interface PricingProps {
   className?: string;
@@ -107,7 +107,13 @@ const Pricing: React.FC<PricingPropsWithoutClassName> = ({ ...props }) => {
             <Link href="/pricing">
               <h1 className="font-semibold text-lg">Pricing</h1>
             </Link>
-            <UserButton />
+            <Link href="/login">
+            <h1 className="font-semibold text-lg">Login</h1>
+          </Link>
+          <Link href="/signup">
+            <h1 className="font-semibold text-lg">Signup</h1>
+          </Link>
+
 
             <ModeToggle />
           </div>
