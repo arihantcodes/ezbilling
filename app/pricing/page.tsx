@@ -80,7 +80,7 @@ const Pricing: React.FC<PricingPropsWithoutClassName> = ({ ...props }) => {
   return (
     <>
       <div className="h-[50rem] w-full dark:bg-black bg-white  dark:bg-grid-white/[0.1] bg-grid-black/[0.2] relative  ">
-        <div className=" flex flex-row items-center justify-between">
+        <div className=" flex  md:flex-row items-center justify-between">
           <Link href="/">
             <div className="flex items-center">
               <Image
@@ -125,7 +125,7 @@ const Pricing: React.FC<PricingPropsWithoutClassName> = ({ ...props }) => {
             fill="white"
           />
         </div>
-        <div className="flex gap-12 justify-center items-center mt-16">
+        <div className="flex gap-12 justify-center flex-col md:flex-row p-4 items-center mt-12">
           <Card className={cn("w-[380px]", )} >
             <CardHeader>
               <CardTitle>Basic Plan</CardTitle>
