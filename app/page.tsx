@@ -34,7 +34,8 @@ export default function Home() {
     },
   ];
   return (
-    <div className="h-[50rem] w-full dark:bg-black bg-white  dark:bg-grid-white/[0.1] bg-grid-black/[0.2] relative  ">
+    // try using h-full or h-[100vh] because of hard coded value it is creating a scrolling effect in md screen
+    <div className="h-full w-full dark:bg-black bg-white  dark:bg-grid-white/[0.1] bg-grid-black/[0.2] relative  ">
       <div className=" flex flex-row items-center justify-between">
         <div className="flex items-center">
           <Image
