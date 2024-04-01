@@ -11,6 +11,7 @@ export async function GET(request: NextRequest) {
       message: "User Logged out successfully ",
       success: true,
     });
+    console.log("User Logged out successfully ")
     response.cookies.set("token", "", {
       httpOnly: true,
       expires: new Date(0),

@@ -42,12 +42,30 @@ export default function LoginForm() {
     try {
       setLoading(true);
       const response = await axios.post("/api/user/login", user);
-      console.log("signin successful", response.data);
-      router.push("/apps");
-    } catch (error: any) {
-      console.log("signin failed");
+      
+      if (response.data.success) {
+        // Login successful
+        console.log("signin successful", response.data);
+        
+        // Extract _id from the response data
+        const userId = response.data.data._id;
+        
+      
+        router.push(`/apps/${userId}`);
+      } else {
+        // Login failed
+        console.log("signin failed");
+    
+      }
+    } catch (error) {
+      // Error during login
+      console.error("Error during signin:", error);
+      // Handle error scenario, e.g., show error message to the user
+    } finally {
+      setLoading(false);
     }
   };
+  
 
   return (
     <>
@@ -136,9 +154,13 @@ export default function LoginForm() {
                   }
                 />
               </div>
-              <Button type="submit" className="w-full" onClick={onSignin}>
+            
+              <Button type="submit" className="w-full"  onClick={onSignin}>
+                
                 Login
+               
               </Button>
+              
               <Button variant="outline" className="w-full">
                 Login with Google
               </Button>
