@@ -1,3 +1,4 @@
+"use client"
 import Link from "next/link";
 import {
   Bell,
@@ -8,12 +9,12 @@ import {
   Package,
   Package2,
   Search,
-  ShoppingCart,
+
   Users,
   Settings,
 } from "lucide-react";
 
-import { Badge } from "@/components/ui/badge";
+
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -29,7 +30,7 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
+} from "@/components/ui/dropdown-menu";
 
 import { Input } from "@/components/ui/input";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
@@ -119,7 +120,7 @@ export default function Dashboard() {
                 </CardDescription>
               </CardHeader>
               <CardContent className="p-2 pt-0 md:p-4 md:pt-0">
-              <Link href="/apps/pricing">
+                <Link href="/apps/pricing">
                   <Button size="sm" className="w-full">
                     Upgrade
                   </Button>
@@ -211,7 +212,7 @@ export default function Dashboard() {
                     </CardDescription>
                   </CardHeader>
                   <CardContent>
-                  <Link href="/apps/pricing">
+                    <Link href="/pricing">
                       <Button size="sm" className="w-full">
                         Upgrade
                       </Button>
@@ -243,7 +244,7 @@ export default function Dashboard() {
             <DropdownMenuContent align="end">
               <DropdownMenuLabel>My Account</DropdownMenuLabel>
               <DropdownMenuSeparator />
-              <DropdownMenuItem>Settings</DropdownMenuItem>
+              <DropdownMenuItem>Profile</DropdownMenuItem>
               <DropdownMenuItem>Support</DropdownMenuItem>
               <DropdownMenuSeparator />
               <DropdownMenuItem>Logout</DropdownMenuItem>
