@@ -89,21 +89,21 @@ export default function Dashboard({params}:any) {
           <div className="flex-1">
             <nav className="grid items-start px-2 text-sm font-medium lg:px-4">
               <Link
-                href="/apps"
+                 href={`/apps/${params.id}`}
                 className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary"
               >
                 <Home className="h-4 w-4" />
                 Dashboard
               </Link>
               <Link
-                href="/apps/settings"
+                 href={`/apps/settings/${params.id}`}
                 className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary"
               >
                 <Settings className="h-4 w-4" />
                 Settings
               </Link>
               <Link
-                href="/apps/yourbill"
+                 href={`/apps/yourbill/${params.id}`}
                 className="flex items-center gap-3 rounded-lg bg-muted px-3 py-2 text-primary transition-all hover:text-primary"
               >
                 <Package className="h-4 w-4" />
@@ -135,7 +135,7 @@ export default function Dashboard({params}:any) {
                 </CardDescription>
               </CardHeader>
               <CardContent className="p-2 pt-0 md:p-4 md:pt-0">
-                <Link href="/apps/pricing">
+                <Link href="/pricing">
                   <Button size="sm" className="w-full">
                     Upgrade
                   </Button>
@@ -180,22 +180,21 @@ export default function Dashboard({params}:any) {
                   />
                   <span className="">EzBilling</span>
                 </Link>
-                <Link
-                  href="/apps"
+                <Link href={`/apps/${params.id}`}
                   className="mx-[-0.65rem] flex items-center gap-4 rounded-xl px-3 py-2 text-muted-foreground hover:text-foreground"
                 >
                   <Home className="h-5 w-5" />
                   Dashboard
                 </Link>
                 <Link
-                  href="/apps/settings"
+               href={`/apps/settings/${params.id}`}
                   className="mx-[-0.65rem] flex items-center gap-4 rounded-xl bg-muted px-3 py-2 text-foreground hover:text-foreground"
                 >
                   <Settings className="h-5 w-5" />
                   Settings
                 </Link>
                 <Link
-                  href="/apps/yourbill"
+               href={`/apps/settings/${params.id}`}
                   className="mx-[-0.65rem] flex items-center gap-4 rounded-xl px-3 py-2 text-muted-foreground hover:text-foreground"
                 >
                   <Package className="h-5 w-5" />
