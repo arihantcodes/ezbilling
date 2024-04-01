@@ -128,8 +128,9 @@ export default function LoginForm() {
                 <Input
                   id="email"
                   type="email"
-                  placeholder="m@example.com"
+                  placeholder="email"
                   required
+                  className="dark:text-black dark:placeholder:text-black text-[16px] font-medium"
                   value={user.email}
                   onChange={(e) => setUser({ ...user, email: e.target.value })}
                 />
@@ -147,7 +148,9 @@ export default function LoginForm() {
                 <Input
                   id="password"
                   type="password"
+                  placeholder="password"
                   required
+                  className="dark:text-black dark:placeholder:text-black text-[16px] font-medium"
                   value={user.password}
                   onChange={(e) =>
                     setUser({ ...user, password: e.target.value })

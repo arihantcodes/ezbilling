@@ -35,7 +35,7 @@ export default function Home() {
   ];
   return (
     <div className="h-[50rem] w-full dark:bg-black bg-white  dark:bg-grid-white/[0.1] bg-grid-black/[0.2] relative  ">
-      <div className=" flex flex-row items-center justify-between">
+      <div className=" flex flex-row items-center justify-between " >
         <div className="flex items-center">
           <Image
             src={logodark}

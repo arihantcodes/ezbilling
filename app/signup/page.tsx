@@ -119,6 +119,7 @@ export default function LoginForm() {
                     id="fullname"
                     placeholder="Fullname"
                     required
+                    className="dark:text-black dark:placeholder:text-black text-[16px] font-medium"
                     value={user.fullname}
                     onChange={(e) =>
                       setUser({ ...user, fullname: e.target.value })
@@ -131,6 +132,7 @@ export default function LoginForm() {
                     id="username"
                     placeholder="Username"
                     required
+                    className="dark:text-black dark:placeholder:text-black text-[16px] font-medium"
                     value={user.username}
                     onChange={(e) =>
                       setUser({ ...user, username: e.target.value })
@@ -145,6 +147,7 @@ export default function LoginForm() {
                   type="email"
                   placeholder="m@example.com"
                   required
+                  className="dark:text-black dark:placeholder:text-black text-[16px] font-medium"
                   value={user.email}
                   onChange={(e) => setUser({ ...user, email: e.target.value })}
                 />
@@ -154,6 +157,8 @@ export default function LoginForm() {
                 <Input
                   id="password"
                   type="password"
+                  placeholder="password"
+                  className="dark:text-black dark:placeholder:text-black text-[16px] font-medium"
                   value={user.password}
                   onChange={(e) => setUser({ ...user, password: e.target.value })}
                 />

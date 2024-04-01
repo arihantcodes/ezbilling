@@ -42,6 +42,7 @@ import logolight from "@/public/logolight.svg";
 import axios from "axios";
 import toast from "react-hot-toast";
 import { useRouter } from "next/navigation";
+import Billtemp from "@/components/billtemp";
 
 export default function Dashboard({params}:any) {
    const router = useRouter();
@@ -57,8 +58,8 @@ export default function Dashboard({params}:any) {
   };
 
   return (
-    <div className="grid min-h-screen w-full md:grid-cols-[220px_1fr] lg:grid-cols-[280px_1fr]">
-      <div className="hidden border-r bg-muted/40 md:block">
+    <div className="grid min-h-screen w-full dark:bg-black   md:grid-cols-[220px_1fr] lg:grid-cols-[280px_1fr]">
+      <div className="hidden border-r dark:bg-black md:block">
         <div className="flex h-full max-h-screen flex-col gap-2">
           <div className="flex h-14 items-center border-b px-4 lg:h-[60px] lg:px-6">
             <Link
@@ -146,7 +147,7 @@ export default function Dashboard({params}:any) {
         </div>
       </div>
       <div className="flex flex-col">
-        <header className="flex h-14 items-center gap-4 border-b bg-muted/40 px-4 lg:h-[60px] lg:px-6">
+        <header className="flex h-14 items-center gap-4 border-b  dark:bg-black px-4 lg:h-[60px] lg:px-6">
           <Sheet>
             <SheetTrigger asChild>
               <Button
@@ -270,11 +271,8 @@ export default function Dashboard({params}:any) {
           </DropdownMenu>
           <ModeToggle />
         </header>
-        <main className="flex  flex-row flex-wrap justify-evenly gap-4 p-4 lg:gap-6 lg:p-6">
-          <ThreeDCardDemo />
-          <ThreeDCardDemo />
-          <ThreeDCardDemo />
-          <ThreeDCardDemo />
+        <main className="flex  dark:bg-black  flex-row flex-wrap justify-evenly gap-4 p-4 lg:gap-6 lg:p-6">
+         <Billtemp/>
         </main>
       </div>
     </div>
