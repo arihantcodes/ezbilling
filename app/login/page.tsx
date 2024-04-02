@@ -130,7 +130,7 @@ export default function LoginForm() {
                   type="email"
                   placeholder="email"
                   required
-                  className="dark:text-black dark:placeholder:text-black text-[16px] font-medium"
+                  className="dark:text-black dark:placeholder:text-black text-[16px] "
                   value={user.email}
                   onChange={(e) => setUser({ ...user, email: e.target.value })}
                 />
@@ -150,7 +150,7 @@ export default function LoginForm() {
                   type="password"
                   placeholder="password"
                   required
-                  className="dark:text-black dark:placeholder:text-black text-[16px] font-medium"
+                  className="dark:text-black dark:placeholder:text-black text-[16px] "
                   value={user.password}
                   onChange={(e) =>
                     setUser({ ...user, password: e.target.value })
