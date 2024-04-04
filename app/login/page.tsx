@@ -17,7 +17,7 @@ import logolight from "@/public/logolight.svg";
 import logodark from "@/public/logodark.svg";
 import { Spotlight } from "@/components/ui/Spotlight";
 import axios from "axios";
-
+import toast, { Toaster } from "react-hot-toast";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
@@ -42,30 +42,26 @@ export default function LoginForm() {
     try {
       setLoading(true);
       const response = await axios.post("/api/user/login", user);
-      
+
       if (response.data.success) {
         // Login successful
         console.log("signin successful", response.data);
-        
+
         // Extract _id from the response data
         const userId = response.data.data._id;
-        
-      
+
+        toast.success("Login Successfully ");
         router.push(`/apps/${userId}`);
-      } else {
-        // Login failed
-        console.log("signin failed");
-    
       }
     } catch (error) {
       // Error during login
       console.error("Error during signin:", error);
+      toast.error("Login Failed");
       // Handle error scenario, e.g., show error message to the user
     } finally {
       setLoading(false);
     }
   };
-  
 
   return (
     <>
@@ -130,7 +126,7 @@ export default function LoginForm() {
                   type="email"
                   placeholder="email"
                   required
-                  className="dark:text-black dark:placeholder:text-black text-[16px] "
+                  className=""
                   value={user.email}
                   onChange={(e) => setUser({ ...user, email: e.target.value })}
                 />
@@ -150,20 +146,20 @@ export default function LoginForm() {
                   type="password"
                   placeholder="password"
                   required
-                  className="dark:text-black dark:placeholder:text-black text-[16px] "
+                  className=""
                   value={user.password}
                   onChange={(e) =>
                     setUser({ ...user, password: e.target.value })
                   }
                 />
               </div>
-            
-              <Button type="submit" className="w-full"  onClick={onSignin}>
-                
-                Login
-               
-              </Button>
-              
+              <div>
+                <Button type="submit" className="w-full" onClick={onSignin}>
+                  Login
+                </Button>
+                <Toaster position="top-right" reverseOrder={false} />
+              </div>
+
               <Button variant="outline" className="w-full">
                 Login with Google
               </Button>

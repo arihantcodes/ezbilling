@@ -13,7 +13,7 @@ import {
   Users,
   Settings,
 } from "lucide-react";
-
+import toast, { Toaster } from "react-hot-toast";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -40,7 +40,7 @@ import Image from "next/image";
 import logodark from "@/public/logodark.svg";
 import logolight from "@/public/logolight.svg";
 import axios from "axios";
-import toast from "react-hot-toast";
+
 import { useRouter } from "next/navigation";
 import Billtemp from "@/components/billtemp";
 
@@ -266,7 +266,11 @@ export default function Dashboard({params}:any) {
               </DropdownMenuItem>
               <DropdownMenuItem>Support</DropdownMenuItem>
               <DropdownMenuSeparator />
-              <DropdownMenuItem onClick={logout}>Logout</DropdownMenuItem>
+              <div>
+              <DropdownMenuItem onClick={logout}>Logout
+              </DropdownMenuItem>
+              <Toaster position="top-right" reverseOrder={false} />
+              </div>
             </DropdownMenuContent>
           </DropdownMenu>
           <ModeToggle />

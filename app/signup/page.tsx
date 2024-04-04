@@ -17,11 +17,10 @@ import logolight from "@/public/logolight.svg";
 import logodark from "@/public/logodark.svg";
 import { Spotlight } from "@/components/ui/Spotlight";
 import axios from "axios";
-
+import toast, { Toaster } from "react-hot-toast";
 import { useRouter } from "next/navigation";
 
 export default function LoginForm() {
-
   const router = useRouter();
 
   const [user, setUser] = useState({
@@ -49,10 +48,11 @@ export default function LoginForm() {
     try {
       setLoading(true);
       const response = await axios.post("/api/user/signup", user);
-      console.log("signup successful", response.data);
+      toast.success("Account Create Successfully ");
       router.push("/login");
     } catch (error: any) {
       console.log("signup failed");
+      toast.error("Account Create Failed");
     }
   };
 
@@ -119,7 +119,6 @@ export default function LoginForm() {
                     id="fullname"
                     placeholder="Fullname"
                     required
-                    className="dark:text-black dark:placeholder:text-black text-[16px] font-medium"
                     value={user.fullname}
                     onChange={(e) =>
                       setUser({ ...user, fullname: e.target.value })
@@ -132,7 +131,6 @@ export default function LoginForm() {
                     id="username"
                     placeholder="Username"
                     required
-                    className="dark:text-black dark:placeholder:text-black text-[16px] font-medium"
                     value={user.username}
                     onChange={(e) =>
                       setUser({ ...user, username: e.target.value })
@@ -147,7 +145,6 @@ export default function LoginForm() {
                   type="email"
                   placeholder="m@example.com"
                   required
-                  className="dark:text-black dark:placeholder:text-black text-[16px] font-medium"
                   value={user.email}
                   onChange={(e) => setUser({ ...user, email: e.target.value })}
                 />
@@ -158,14 +155,20 @@ export default function LoginForm() {
                   id="password"
                   type="password"
                   placeholder="password"
-                  className="dark:text-black dark:placeholder:text-black text-[16px] font-medium"
                   value={user.password}
-                  onChange={(e) => setUser({ ...user, password: e.target.value })}
+                  onChange={(e) =>
+                    setUser({ ...user, password: e.target.value })
+                  }
                 />
               </div>
-              <Button type="submit" className="w-full" onClick={onSignup}>
-               {buttonDisabled ? " Create an account" : " Ready For Create an account"}
-              </Button>
+              <div>
+                <Button type="submit" className="w-full" onClick={onSignup}>
+                  {buttonDisabled
+                    ? " Create an account"
+                    : " Ready For Create an account"}
+                </Button>
+                <Toaster position="top-right" reverseOrder={false} />
+              </div>
               <Button variant="outline" className="w-full">
                 Sign up with GitHub
               </Button>
