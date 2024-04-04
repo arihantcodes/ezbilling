@@ -8,7 +8,7 @@ connect();
 export async function POST(request: NextRequest, response: NextResponse) {
     try {
         const reqBody = await request.json();
-
+            console.log(reqBody)
         const { userId, ...billData } = reqBody; // Destructure userId from reqBody
 
         
@@ -25,7 +25,7 @@ export async function POST(request: NextRequest, response: NextResponse) {
     } catch (error) {
         console.error("Error saving bill details:", error);
         return NextResponse.json({
-            message: "Failed to save bill details",
+            message: "Failed to save bill details backend",
             success: false,
         });
     }
