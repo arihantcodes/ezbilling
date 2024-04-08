@@ -28,6 +28,13 @@ const userSchema = new mongoose.Schema({
   forgotpasswordtokenexpires: Date,
   verifytoken: String,
   verifytokenexpires: Date,
+  yourbills:[
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Bills"
+    },
+   
+  ]
 });
 
 
