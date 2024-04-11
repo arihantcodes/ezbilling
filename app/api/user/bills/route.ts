@@ -9,7 +9,7 @@ export async function POST(request: NextRequest, response: NextResponse) {
     try {
         const reqBody = await request.json();
             console.log(reqBody)
-        const { userId, ...billData } = reqBody; // Destructure userId from reqBody
+        const { userId, ...billData } = reqBody;
 
         
         const newBill = new Bill({ userId, ...billData });

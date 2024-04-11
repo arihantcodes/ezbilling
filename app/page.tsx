@@ -4,10 +4,9 @@ import Image from "next/image";
 import logolight from "../public/logolight.svg";
 import logodark from "../public/logodark.svg";
 
-import { cn } from "@/utils/cn";
 import { Spotlight } from "@/components/ui/Spotlight";
 import { TypewriterEffect } from "@/components/ui/typewriter-effect";
-import { HoverBorderGradient } from "@/components/ui/hover-border-gradient";
+
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { Rating } from "@/components/rating";
