@@ -1,7 +1,7 @@
 import { connect } from "@/dbconfig/dbconfig";
 import User from "@/models/user.model";
 import { NextRequest, NextResponse } from "next/server";
-import bycrptjs from "bcryptjs";
+
 
 // mongoDB Call
 connect();
